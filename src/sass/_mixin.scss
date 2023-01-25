@@ -1,0 +1,32 @@
+@mixin flexCenter($dir:row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+@mixin header-optionline-2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+@mixin borderClr($clr:$nav-bg , $size:.2rem) {
+    border: $size solid $clr;
+}
+
+@mixin borderClrOnHover($clr:white , $size:.2rem){
+    border: $size solid $clr;
+}
+
+@mixin mainBtn{
+    margin-top: 2rem;
+    background-color: #f0c14b;
+    border: .1rem solid black;
+    color: black;
+    padding: .2rem .6rem;
+    border-radius: .2rem;
+}
+
+@mixin signUpBtn {
+    background: linear-gradient(#f5d09f,#e3a34f) !important;
+}
