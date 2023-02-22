@@ -136,7 +136,6 @@ export default function Signup() {
               onChange={handleChange}
             />
           </div>
-
           <button className="signup-btn" onClick={signup}>
             Sign up
           </button>

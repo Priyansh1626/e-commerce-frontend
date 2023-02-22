@@ -13,7 +13,7 @@ export const initialState = {
         subCategory: null,
     },
 }
-
+    
 //selector
 export const getBasketTotal = (basket) => {
     let sum = 0;

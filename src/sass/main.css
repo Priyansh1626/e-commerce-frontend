@@ -336,7 +336,7 @@ section {
   margin-top: 2rem;
 }
 .home .home-container .home-big-product-container .top-layer-container .top-layer-box {
-  width: 40vw;
+  width: 100%;
   padding: 1rem;
   margin: 1rem;
   background-color: white;
@@ -352,8 +352,33 @@ section {
   font-size: 1.5rem;
   text-transform: capitalize;
 }
-.home .home-container .home-big-product-container .top-layer-container .width50 {
-  width: 50vw;
+.home .home-container .home-big-product-container .top-layer-container .top-layer-box .sub-cat-container {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .home-container .home-big-product-container .top-layer-container .top-layer-box .sub-cat-container .sub-cat-sub-container {
+  width: 50%;
+}
+.home .home-container .home-big-product-container .top-layer-container .top-layer-box .sub-cat-container .sub-cat-sub-container .img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.home .home-container .home-big-product-container .top-layer-container .top-layer-box .sub-cat-container .sub-cat-sub-container .img-box img {
+  max-height: 26vh;
+  min-height: 14vh;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.home .home-container .home-big-product-container .top-layer-container .top-layer-box .sub-cat-container .sub-cat-sub-container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .home .home-container .home-big-product-container .subcategory {
   background-color: white;
@@ -365,6 +390,9 @@ section {
   text-transform: capitalize;
   font-weight: 600;
   padding: 1rem 2rem;
+}
+.home .home-container .home-big-product-container .subcategory .heading-hr {
+  margin: 0 0 2rem 2rem;
 }
 .home .home-container .home-big-product-container .subcategory .product-container {
   display: flex;
@@ -385,6 +413,9 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
 }
 .home .home-container .home-big-product-container .subcategory .product-container .product:last-child {
   margin-right: 0;
@@ -393,6 +424,11 @@ section {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  min-height: 30vh;
+}
+.home .home-container .home-big-product-container .subcategory .product-container .product .title {
+  margin-top: 1.2rem;
+  color: rgb(46, 46, 213);
 }
 
 .porductDetails {

@@ -305,7 +305,7 @@ section{
                 }
 
                 .top-layer-box{
-                    width: 40vw;
+                    width: 100%;
                     padding: 1rem;
                     margin: 1rem;
                     background-color: white;
@@ -322,10 +322,38 @@ section{
                         font-size: 1.5rem;
                         text-transform: capitalize;
                     }
-                }
 
-                .width50{
-                    width: 50vw;
+                    .sub-cat-container{
+                        height: 90%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // background-color: red;
+
+                        .sub-cat-sub-container{
+                            // background-color: pink;
+                            width: 50%;
+                            
+                            .img-box{
+                                @include flexCenter;
+                                // width: 50%;
+                                // background-color: blue;
+                                
+                                img{
+                                    max-height: 26vh;
+                                    min-height: 14vh;
+                                    width: 80%;
+                                    object-fit: contain;
+                                }
+                            }
+
+                            p{
+                                @include flexCenter;
+                                // background-color: green;
+                            }
+
+                        }
+                    }
                 }
             }
             
@@ -341,6 +369,10 @@ section{
                     padding: 1rem 2rem;
                 }
 
+                .heading-hr{
+                    margin: 0 0 2rem 2rem;
+                }
+
                 .product-container{
                     // background-color: pink;
                     display: flex;
@@ -351,10 +383,7 @@ section{
                     &::-webkit-scrollbar{
                         display: none;
                     }
-                    
-                    // @include flexCenter;
-                    // justify-content: flex-start;
-                    
+
                     .product{
                             width: 14vw;
                             flex-grow: 0;
@@ -364,6 +393,9 @@ section{
                             // border: .1rem solid black;
                             padding: 0;
                             @include flexCenter;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            cursor: pointer;
 
                             &:last-child{
                                 margin-right: 0;
@@ -372,6 +404,13 @@ section{
                             img{
                                 width: 100%;
                                 object-fit: contain;
+                                min-height: 30vh;
+                                // background-color: red;
+                            }
+
+                            .title{
+                                margin-top: 1.2rem;
+                                color: rgb(46, 46, 213);
                             }
                         }
                     }
