@@ -97,8 +97,8 @@ export default function HomeProducts() {
                 <div className="top-layer-heading">{elm}</div>
                 <div className="sub-cat-container">
                   {elm === "phones"
-                    ? phones.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    ? phones.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src="https://m.media-amazon.com/images/I/715rSRKUlLL._AC_UY327_QL65_.jpg"
@@ -108,8 +108,8 @@ export default function HomeProducts() {
                           <p>{subcat}</p>
                         </div>
                       ))
-                    : footwear.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    : footwear.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src={
@@ -133,8 +133,8 @@ export default function HomeProducts() {
                 <div className="top-layer-heading">{elm}</div>
                 <div className="sub-cat-container">
                   {elm === "clothes"
-                    ? clothes.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    ? clothes.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src={
@@ -148,8 +148,8 @@ export default function HomeProducts() {
                           <p>{subcat}</p>
                         </div>
                       ))
-                    : headphones.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    : headphones.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src={
@@ -175,8 +175,8 @@ export default function HomeProducts() {
                 <div className="top-layer-heading">{elm}</div>
                 <div className="sub-cat-container">
                   {elm === "accessories"
-                    ? accessories.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    ? accessories.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src={
@@ -190,8 +190,8 @@ export default function HomeProducts() {
                           <p>{subcat}</p>
                         </div>
                       ))
-                    : fitness.map((subcat) => (
-                        <div className="sub-cat-sub-container">
+                    : fitness.map((subcat, i) => (
+                        <div className="sub-cat-sub-container" key={i}>
                           <div className="img-box">
                             <img
                               src={

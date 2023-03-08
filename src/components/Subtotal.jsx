@@ -35,6 +35,7 @@ export default function Subtotal() {
             </div>
           </>
         )}
+        // {console.log(value)}
         decimalScale={2}
         value={getBasketTotal(basket)}
         displayType={"text"}
