@@ -3,6 +3,7 @@ import logo from "../../images/form-logo.png";
 import { Link } from "react-router-dom";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
+// import { axiosConfig } from "../stateManager/reducer";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -24,12 +25,19 @@ export default function Signup() {
     });
   };
 
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+    },
+    withCredentials: true,
+  };
+
   const signup = async (e) => {
     e.preventDefault();
     const { name, email, password, phone, locality, city, state } = User;
     if (name && email && password && phone && locality && city && state) {
-      // http://localhost:8000
-      const resp = await axios.post("http://localhost:8000/auth/signup", User, {
+      const resp = await axios.post("/auth/signup", User, {
         withCredentials: true,
       });
       if (resp.data.user) {

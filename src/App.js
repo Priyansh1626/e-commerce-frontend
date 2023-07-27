@@ -10,7 +10,7 @@ import Payment from './components/Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Orders from './components/Orders';
-import axios from 'axios';
+import axios from "./components/axios";
 import { useStateValue } from './components/stateManager/StateProvider';
 import UpdateProfile from './components/auth/UpdateProfile';
 import SellerPage from './components/SellerPage';
@@ -26,7 +26,7 @@ export default function App() {
 
   useEffect(() => {
     const call = async () => {
-      const response = await axios.get("http://localhost:8000/isuser", {
+      const response = await axios.get("/isuser", {
         withCredentials: true,
       })
       if (response.data.user) {

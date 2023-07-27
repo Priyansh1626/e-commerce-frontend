@@ -5,6 +5,7 @@ import axios from "./axios";
 import { useStateValue } from "./stateManager/StateProvider";
 import Grid from "@mui/material/Grid";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+// import { axiosConfig } from "./stateManager/reducer";
 
 export default function HomeProducts() {
   const [{ allProducts }, dispatch] = useStateValue();
@@ -30,6 +31,14 @@ export default function HomeProducts() {
       })
     ),
   ];
+
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
 
   const findSubCategory = async (category) => {
     const response = await axios.post(
@@ -62,7 +71,9 @@ export default function HomeProducts() {
 
   useEffect(() => {
     const populateproducts = async () => {
-      const response = await axios.get("/api/getallproducts");
+      const response = await axios.get("/api/getallproducts", {
+        withCredentials: true,
+      });
       dispatch({
         type: "SET_ALL_PRODUCTS",
         allProducts: response.data.allproducts,

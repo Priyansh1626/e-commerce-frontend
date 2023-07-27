@@ -45,10 +45,19 @@ export default function ProductForm() {
     setID(num);
   }, []);
 
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
+
   const newProduct = async (e) => {
     e.preventDefault();
 
     const { title, price, img, category, rating, subCategory } = prod;
+    console.log(prod);
 
     if (title && price && img && category && rating && subCategory) {
       const deployProduct = async () => {
@@ -60,6 +69,7 @@ export default function ProductForm() {
               withCredentials: true,
             }
           );
+          console.log(response);
           if (response.data.product) {
             setProd({
               title: "",

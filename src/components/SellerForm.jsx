@@ -4,6 +4,7 @@ import CurrencyFormat from "react-currency-format";
 import logo from "../images/form-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useStateValue } from "./stateManager/StateProvider";
+// import { axiosConfig } from "./stateManager/reducer";
 
 export default function SellerForm() {
   const navigate = useNavigate();
@@ -31,6 +32,14 @@ export default function SellerForm() {
     if (name !== "") {
       setError(false);
     }
+  };
+
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
   };
 
   const makeSeller = async (e) => {

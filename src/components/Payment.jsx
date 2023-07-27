@@ -28,7 +28,9 @@ export default function Payment() {
         const getClientSecret = async () => {
           const response = await axios.post(
             `/checkout/payment/create?total=${getBasketTotal(basket) * 100}`
-          );
+          ,{
+            withCredentials: true,
+          });
           setClientSecret(response.data.clientSecret);
         };
         getClientSecret();
@@ -39,6 +41,14 @@ export default function Payment() {
       navigate("/", { replace: true });
     }
   }, [basket]);
+
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

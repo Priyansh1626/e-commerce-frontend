@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import { useStateValue } from "./stateManager/StateProvider";
 import CurrencyFormat from "react-currency-format";
+// import { axiosConfig } from "./stateManager/reducer";
 
 export default function ProductDetails() {
   const [{ productDetailId, productDetail, basket }, dispatch] =
@@ -10,6 +11,15 @@ export default function ProductDetails() {
   const [qnt, setQnt] = useState(1);
   // recommended to staore this in localstorage so that even after page reloads we can see the
   // details to selected product.
+
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
+
   useEffect(() => {
     const callFunc = async () => {
       const response = await axios.post(

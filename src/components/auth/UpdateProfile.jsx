@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../stateManager/StateProvider";
+// import { axiosConfig } from "../stateManager/reducer";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -25,28 +26,44 @@ export default function Signup() {
     });
   };
 
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
+
   const update = async (e) => {
     e.preventDefault();
     const { name, phone, locality, city, state } = User;
     if (name && phone && locality && city && state) {
-      const resp = await axios.patch("/auth/updateprofile", User, {
-        withCredentials: true,
-      });
-      if (resp.data.user) {
-        setUser({
-          name: "",
-          phone: "",
-          locality: "",
-          city: "",
-          state: "",
-        });
-        dispatch({
-          type: "SET_USER",
-          user: resp.data.user,
-        });
-        navigate("/");
+      try {
+        let resp = await axios.patch(
+          "/auth/updateprofile",
+          User,
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(resp);
+        if (resp.data.user) {
+          setUser({
+            name: "",
+            phone: "",
+            locality: "",
+            city: "",
+            state: "",
+          });
+          dispatch({
+            type: "SET_USER",
+            user: resp.data.user,
+          });
+          navigate("/");
+        }
+      } catch (error) {
+        console.log(error);
       }
-      // console.log(User);
     } else {
       alert("Please enter all fields");
     }

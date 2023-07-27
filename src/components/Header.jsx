@@ -22,10 +22,18 @@ export default function Header() {
 
   // console.log(user.address[0].locality);
 
+  const axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+      withCredentials: true,
+    },
+  };
+
   const signout = async (e) => {
     e.preventDefault();
     try {
-      const resp = await axios.get("/auth/logout", {
+      const resp = await axios.get("/auth/logout",{
         withCredentials: true,
       });
       if (resp.data.message === "logedout") {
