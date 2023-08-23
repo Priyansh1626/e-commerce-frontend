@@ -29,6 +29,7 @@ export default function ProductDetails() {
           withCredentials: true,
         }
       );
+      console.log(response.data);
       if (response.data.product) {
         dispatch({
           type: "SET_PRODUCT_DETAILS",
